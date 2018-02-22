@@ -12,7 +12,6 @@ client.start()
 entity = client.get_entity('anryze_tokensale')
 chat_id = entity.id
 now = datetime.datetime.now()
-#print(client.get_me().stringify())
 entity = client.get_entity('anryze_tokensale')
 chat_id = entity.id
 
@@ -31,9 +30,9 @@ def get_today_msgs(chat):
         if(date != now1):
             break
         i += 1
-        print("===============================================")
+        print(" ")
         print(i)
-        print("===============================================")
+        print(" ")
         print("chat id:")
         chat_id = str(chat)
         print(chat_id)
@@ -73,7 +72,7 @@ def get_today_msgs(chat):
                              passwd="ipk1898",  # your password
                              db="adm_bot",
                              charset='utf8mb4'
-                             )  # name of the data base
+                             )
 
         cur = db.cursor()
 
@@ -87,23 +86,3 @@ def get_today_msgs(chat):
 
 
 get_today_msgs(chat_id)
-
-#def insert_data_to_bd(msg_id, mess_txt, msg_sender, message_datetime,
-                              #chat_id, reply_to_msg_id, fwd_from, is_bot):
-'''
-    db = MySQLdb.connect(host="localhost",  # your host, usually localhost
-                         user="angelina",  # your username
-                         passwd="ipk1898",  # your password
-                         db="adm_bot",
-                         charset='utf8mb4'
-                         )  # name of the data base
-
-    cur = db.cursor()
-
-    sql = ("INSERT INTO msgs(msg_id,mess_txt,msg_sender,message_datetime,chat_id,reply_to_msg_id,fwd_from,is_bot"
-           # forward_orign_message_text"
-           ") VALUES (" + str(msg_id) + ",'" + mess_txt + "'," + str(msg_sender) + "," + str(message_datetime) + "," + str(
-        chat_id) + "," + str(reply_to_msg_id) + "," + str(fwd_from) + "," + str(is_bot) + ")")
-    cur.execute(sql)
-    db.commit()
-    db.close()'''
